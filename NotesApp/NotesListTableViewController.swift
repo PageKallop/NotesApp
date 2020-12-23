@@ -9,10 +9,16 @@ import UIKit
 
 class NotesListTableViewController: UITableViewController {
 
+    
+    @IBOutlet weak var noteTableView: UITableView!
+    
+    @IBOutlet weak var addButtonPressed: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        noteTableView.dataSource = self 
+        noteTableView.delegate = self 
     }
 
     // MARK: - Table view data source

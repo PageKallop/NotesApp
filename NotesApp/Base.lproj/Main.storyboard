@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="esN-9u-BbO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suz-RJ-gjG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Notes View Controller-->
+        <!--Notes List Table View Controller-->
         <scene sceneID="lzp-hl-Lrr">
             <objects>
-                <tableViewController id="T0m-w3-j8c" customClass="ListNotesViewController" customModule="NotesApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="T0m-w3-j8c" customClass="NotesListTableViewController" customModule="NotesApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nB2-DP-Sqm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,14 +31,18 @@
                             <outlet property="delegate" destination="T0m-w3-j8c" id="zNd-cE-fyS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="U4P-LV-0Hz"/>
+                    <navigationItem key="navigationItem" id="U4P-LV-0Hz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qlZ-0G-S99"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButtonPressed" destination="qlZ-0G-S99" id="Buy-0K-5gy"/>
+                        <outlet property="noteTableView" destination="nB2-DP-Sqm" id="UTZ-jE-cAp"/>
                         <segue destination="UQm-6U-TgY" kind="show" identifier="ToNotes" id="6co-dU-W7Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8q-ep-v3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157.97101449275362" y="-42.1875"/>
+            <point key="canvasLocation" x="752.17391304347836" y="-42.1875"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="pNy-9j-8mG">
@@ -77,29 +81,36 @@
                             <constraint firstItem="IXK-cM-WAI" firstAttribute="bottom" secondItem="FLg-f8-8j2" secondAttribute="bottom" id="ztp-zr-dBA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6SA-4f-JQv"/>
+                    <navigationItem key="navigationItem" id="6SA-4f-JQv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rmi-YM-9S6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noteTextField" destination="IXK-cM-WAI" id="bIe-2f-zRY"/>
+                        <outlet property="noteTitleLabel" destination="gaU-oX-KlH" id="49A-h8-nQa"/>
+                        <outlet property="saveButtonPressed" destination="rmi-YM-9S6" id="tI5-WJ-GEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQI-B7-x1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760.86956521739137" y="-42.1875"/>
+            <point key="canvasLocation" x="1671.0144927536232" y="-42.1875"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="n7K-iR-xEO">
+        <scene sceneID="Wfc-7u-jWf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="esN-9u-BbO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="suz-RJ-gjG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TsU-FB-fg9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0fr-ga-roj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="T0m-w3-j8c" kind="relationship" relationship="rootViewController" id="g8O-a8-zOl"/>
+                        <segue destination="T0m-w3-j8c" kind="relationship" relationship="rootViewController" id="Xgi-tX-9nG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pcp-fr-whL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDY-f6-G0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1068.1159420289855" y="-42.1875"/>
+            <point key="canvasLocation" x="-157.97101449275362" y="-42.1875"/>
         </scene>
     </scenes>
     <resources>
