@@ -10,6 +10,8 @@ import UIKit
 class NotesListTableViewController: UITableViewController {
 
     
+    var titles = ["1", "2", "3"]
+    
     @IBOutlet weak var noteTableView: UITableView!
     
     @IBOutlet weak var addButtonPressed: UIBarButtonItem!
@@ -28,16 +30,25 @@ class NotesListTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         
+        cell.textLabel?.text = titles[indexPath.row]
+        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-        return 0
+        return titles.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+        performSegue(withIdentifier: "ToNotes", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! NotesViewController
+        
     }
 
 

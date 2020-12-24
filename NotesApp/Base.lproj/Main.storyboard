@@ -32,7 +32,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="U4P-LV-0Hz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qlZ-0G-S99"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qlZ-0G-S99">
+                            <connections>
+                                <segue destination="UQm-6U-TgY" kind="show" identifier="ToNewNote" id="ChS-Gz-cmx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButtonPressed" destination="qlZ-0G-S99" id="Buy-0K-5gy"/>
@@ -113,6 +117,9 @@
             <point key="canvasLocation" x="-157.97101449275362" y="-42.1875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ChS-Gz-cmx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
