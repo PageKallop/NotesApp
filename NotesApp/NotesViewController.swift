@@ -10,11 +10,15 @@ import RealmSwift
 
 class NotesViewController: UIViewController {
     
-    
+    //initializes realm 
     var realm = try! Realm()
+    var notes: Results<NoteData>?
+    
+    
 
     @IBOutlet weak var noteTitleLabel: UITextField! {
         didSet {
+            //sets color for the placeholder text in note text field
             let whitePlaceholderText = NSAttributedString(string: "Note Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
             
@@ -30,6 +34,7 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //changes color of navbar
         navigationController?.navigationBar.barTintColor = UIColor.clear
         
 
@@ -39,12 +44,29 @@ class NotesViewController: UIViewController {
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         let newNote = NoteData()
-        
+        //gets currrent inputs and save them
         newNote.title = noteTitleLabel.text ?? ""
-        newNote.content = noteTextField.text ?? "" 
+        newNote.content = noteTextField.text ?? ""
+        
+        self.saveNotes(addedNote: newNote)
+        //returns to root view controller
+        navigationController?.popViewController(animated: true)
    
     }
     
+    //saves new notes to realm
+    func saveNotes(addedNote: NoteData) {
+       
+        do {
+        try realm.write{
+            realm.add(addedNote)
+        }
+        } catch {
+            
+            print("error saving added note")
+        }
+        
+    }
 
 
 }

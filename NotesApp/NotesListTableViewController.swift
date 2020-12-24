@@ -10,9 +10,10 @@ import RealmSwift
 
 class NotesListTableViewController: UITableViewController {
 
+    //initializes realm 
     let realm = try! Realm()
     
-    var titles = ["1", "2", "3"]
+    var noteTitles: Results<NoteData>?
     
     @IBOutlet weak var noteTableView: UITableView!
     
@@ -32,14 +33,16 @@ class NotesListTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         
-        cell.textLabel?.text = titles[indexPath.row]
+        if let listTitle = noteTitles?[indexPath.row] {
+            cell.textLabel?.text = listTitle.title
+        }
         
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-        return titles.count
+        return noteTitles?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
