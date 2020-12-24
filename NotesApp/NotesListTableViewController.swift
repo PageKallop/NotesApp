@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotesListTableViewController: UITableViewController {
 
+    let realm = try! Realm()
     
     var titles = ["1", "2", "3"]
     

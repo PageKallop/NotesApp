@@ -6,10 +6,21 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotesViewController: UIViewController {
+    
+    
+    var realm = try! Realm()
 
-    @IBOutlet weak var noteTitleLabel: UILabel!
+    @IBOutlet weak var noteTitleLabel: UITextField! {
+        didSet {
+            let whitePlaceholderText = NSAttributedString(string: "Note Title",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            
+            noteTitleLabel.attributedPlaceholder = whitePlaceholderText
+        }
+    }
     
     @IBOutlet weak var noteTextField: UITextView!
     
@@ -24,6 +35,16 @@ class NotesViewController: UIViewController {
 
 
     }
+    
+    @IBAction func savePressed(_ sender: UIBarButtonItem) {
+        
+        let newNote = NoteData()
+        
+        newNote.title = noteTitleLabel.text ?? ""
+        newNote.content = noteTextField.text ?? "" 
+   
+    }
+    
 
 
 }

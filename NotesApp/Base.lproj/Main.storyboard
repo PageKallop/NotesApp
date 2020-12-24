@@ -57,40 +57,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IXK-cM-WAI">
-                                <rect key="frame" x="20" y="172" width="374" height="690"/>
+                                <rect key="frame" x="20" y="138" width="374" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-oX-KlH">
-                                <rect key="frame" x="20" y="114" width="374" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-dp-Ozc">
+                                <rect key="frame" x="20" y="104" width="374" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FLg-f8-8j2"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="gaU-oX-KlH" secondAttribute="bottom" constant="698" id="IMm-wd-BWM"/>
-                            <constraint firstItem="IXK-cM-WAI" firstAttribute="top" secondItem="mou-iP-cfm" secondAttribute="topMargin" constant="84" id="LHp-IW-Biz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jhd-dp-Ozc" secondAttribute="bottom" constant="724" id="DCb-8R-sXQ"/>
+                            <constraint firstItem="IXK-cM-WAI" firstAttribute="top" secondItem="jhd-dp-Ozc" secondAttribute="bottom" id="JD6-ue-jGg"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="top" secondItem="FLg-f8-8j2" secondAttribute="top" constant="16" id="XSz-sz-Afd"/>
                             <constraint firstItem="FLg-f8-8j2" firstAttribute="trailing" secondItem="IXK-cM-WAI" secondAttribute="trailing" constant="20" id="avo-MS-bNg"/>
-                            <constraint firstItem="FLg-f8-8j2" firstAttribute="trailing" secondItem="gaU-oX-KlH" secondAttribute="trailing" constant="20" id="b11-Fp-bFf"/>
-                            <constraint firstItem="gaU-oX-KlH" firstAttribute="top" secondItem="mou-iP-cfm" secondAttribute="topMargin" constant="26" id="p3A-T8-RKc"/>
-                            <constraint firstItem="gaU-oX-KlH" firstAttribute="leading" secondItem="FLg-f8-8j2" secondAttribute="leading" constant="20" id="r4a-Ex-3Te"/>
+                            <constraint firstItem="FLg-f8-8j2" firstAttribute="trailing" secondItem="jhd-dp-Ozc" secondAttribute="trailing" constant="20" id="noZ-pv-E6K"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="leading" secondItem="FLg-f8-8j2" secondAttribute="leading" constant="20" id="ukI-2O-RpK"/>
                             <constraint firstItem="IXK-cM-WAI" firstAttribute="leading" secondItem="FLg-f8-8j2" secondAttribute="leading" constant="20" id="wUb-Hs-d8v"/>
                             <constraint firstItem="IXK-cM-WAI" firstAttribute="bottom" secondItem="FLg-f8-8j2" secondAttribute="bottom" id="ztp-zr-dBA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6SA-4f-JQv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rmi-YM-9S6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rmi-YM-9S6">
+                            <connections>
+                                <action selector="savePressed:" destination="UQm-6U-TgY" id="RuD-Os-Oy2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="noteTextField" destination="IXK-cM-WAI" id="bIe-2f-zRY"/>
-                        <outlet property="noteTitleLabel" destination="gaU-oX-KlH" id="49A-h8-nQa"/>
+                        <outlet property="noteTitleLabel" destination="jhd-dp-Ozc" id="udP-vt-Ddt"/>
                         <outlet property="saveButtonPressed" destination="rmi-YM-9S6" id="tI5-WJ-GEd"/>
                     </connections>
                 </viewController>
