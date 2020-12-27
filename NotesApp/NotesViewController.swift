@@ -8,13 +8,13 @@
 import UIKit
 import RealmSwift
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController, UITextViewDelegate {
     
     //initializes realm 
     var realm = try! Realm()
     var notes: Results<NoteData>?
     var noteTitle: NoteData?
-    var noteContent: NoteData?
+   
     
     
 
@@ -35,17 +35,17 @@ class NotesViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-   notes = retrieveNotes()
+        // loads saved notes into ui
         noteTitleLabel.text = noteTitle?.title
-        noteTextField.text = noteContent?.content
+        noteTextField.text = noteTitle?.content
         
-        print(noteContent?.content)
+       
         //changes color of navbar
         navigationController?.navigationBar.barTintColor = UIColor.clear
         
+      }
+    
 
-
-    }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
@@ -54,18 +54,20 @@ class NotesViewController: UIViewController {
         newNote.title = noteTitleLabel.text ?? ""
         newNote.content = noteTextField.text ?? ""
         
-        self.saveNotes(addedNote: newNote)
+        self.saveNotes(newNote: newNote)
+       
         //returns to root view controller
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
         print("saved")
+       
     }
     
     //saves new notes to realm
-    func saveNotes(addedNote: NoteData) {
+    func saveNotes(newNote: NoteData) {
        
         do {
         try realm.write{
-            realm.add(addedNote)
+            realm.add(newNote)
         }
         } catch {
             
@@ -73,8 +75,5 @@ class NotesViewController: UIViewController {
         }
         
     }
-    func retrieveNotes() -> Results<NoteData> {
-        return realm.objects(NoteData.self)
-    }
-
+   
 }

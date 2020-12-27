@@ -14,15 +14,8 @@ class NotesListTableViewController: UITableViewController {
     let realm = try! Realm()
     
     var noteTitles: Results<NoteData>?
-    {
-
-           didSet {
-
-               tableView.reloadData()
-           }
-       }
-       
-    
+   
+   
     @IBOutlet weak var noteTableView: UITableView!
     
     @IBOutlet weak var addButtonPressed: UIBarButtonItem!
@@ -32,6 +25,7 @@ class NotesListTableViewController: UITableViewController {
         super.viewDidLoad()
         noteTableView.dataSource = self 
         noteTableView.delegate = self
+      
 
         loadTitles()
     }
@@ -61,7 +55,6 @@ class NotesListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        performSegue(withIdentifier: "ToNotes", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,13 +67,13 @@ class NotesListTableViewController: UITableViewController {
         
     }
     
+    
     //load realm data
     func loadTitles() {
         noteTitles = realm.objects(NoteData.self)
         noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: false)
         noteTableView.reloadData()
     }
-    
     
 
 

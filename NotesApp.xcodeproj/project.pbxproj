@@ -122,9 +122,9 @@
 			children = (
 				C0B286D62593DB3700B762BE /* AppDelegate.swift */,
 				C0B286D82593DB3700B762BE /* SceneDelegate.swift */,
-				C0B287142593E47E00B762BE /* NotesViewController.swift */,
 				C0D6B39C25950BBA00BE901A /* NoteData.swift */,
 				C0B2871C2593E8CE00B762BE /* NotesListTableViewController.swift */,
+				C0B287142593E47E00B762BE /* NotesViewController.swift */,
 				C0B286DC2593DB3700B762BE /* Main.storyboard */,
 				C0B286DF2593DB3800B762BE /* Assets.xcassets */,
 				C0B286E12593DB3800B762BE /* LaunchScreen.storyboard */,

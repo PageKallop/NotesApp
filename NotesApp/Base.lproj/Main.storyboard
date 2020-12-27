@@ -24,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="UQm-6U-TgY" kind="show" identifier="ToNotes" id="aC5-s0-ex3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,7 +44,6 @@
                     <connections>
                         <outlet property="addButtonPressed" destination="qlZ-0G-S99" id="Buy-0K-5gy"/>
                         <outlet property="noteTableView" destination="nB2-DP-Sqm" id="UTZ-jE-cAp"/>
-                        <segue destination="UQm-6U-TgY" kind="show" identifier="ToNotes" id="6co-dU-W7Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8q-ep-v3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,7 +123,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6co-dU-W7Q"/>
+        <segue reference="aC5-s0-ex3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
