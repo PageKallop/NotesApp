@@ -13,7 +13,7 @@ class NotesListTableViewController: UITableViewController {
     //initializes realm 
     let realm = try! Realm()
     
-    var noteTitles: Results<NoteData>?
+    var noteTitles: Results<NoteData>? 
     
     @IBOutlet weak var noteTableView: UITableView!
     
@@ -26,10 +26,11 @@ class NotesListTableViewController: UITableViewController {
         noteTableView.delegate = self
         loadTitles()
     }
-    override func viewWillAppear(_ animated: Bool) {
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadTitles()
     }
-
+ 
     // MARK: - Table view data source
 
     
@@ -67,7 +68,7 @@ class NotesListTableViewController: UITableViewController {
     //load realm data
     func loadTitles() {
         noteTitles = realm.objects(NoteData.self)
-        noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: true)
+        noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: false)
         noteTableView.reloadData()
     }
 
