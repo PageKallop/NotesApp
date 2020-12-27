@@ -23,7 +23,11 @@ class NotesListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         noteTableView.dataSource = self 
-        noteTableView.delegate = self 
+        noteTableView.delegate = self
+        loadTitles()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+    
     }
 
     // MARK: - Table view data source
@@ -54,8 +58,18 @@ class NotesListTableViewController: UITableViewController {
         
         let destinationVC = segue.destination as! NotesViewController
         
+        if segue.identifier == "ToNotes" {
+            destinationVC.noteTitle = noteTitles![noteTableView.indexPathForSelectedRow!.row]
+        }
+        
     }
-
+    
+    //load realm data
+    func loadTitles() {
+        noteTitles = realm.objects(NoteData.self)
+        noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: true)
+        noteTableView.reloadData()
+    }
 
 
 }

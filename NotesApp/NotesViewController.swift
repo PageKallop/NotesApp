@@ -13,6 +13,7 @@ class NotesViewController: UIViewController {
     //initializes realm 
     var realm = try! Realm()
     var notes: Results<NoteData>?
+    var noteTitle: NoteData?
     
     
 
@@ -51,7 +52,7 @@ class NotesViewController: UIViewController {
         self.saveNotes(addedNote: newNote)
         //returns to root view controller
         navigationController?.popViewController(animated: true)
-   
+        print("saved")
     }
     
     //saves new notes to realm
