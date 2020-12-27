@@ -13,7 +13,15 @@ class NotesListTableViewController: UITableViewController {
     //initializes realm 
     let realm = try! Realm()
     
-    var noteTitles: Results<NoteData>? 
+    var noteTitles: Results<NoteData>?
+    {
+
+           didSet {
+
+               tableView.reloadData()
+           }
+       }
+       
     
     @IBOutlet weak var noteTableView: UITableView!
     
@@ -24,6 +32,7 @@ class NotesListTableViewController: UITableViewController {
         super.viewDidLoad()
         noteTableView.dataSource = self 
         noteTableView.delegate = self
+
         loadTitles()
     }
     
@@ -71,6 +80,8 @@ class NotesListTableViewController: UITableViewController {
         noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: false)
         noteTableView.reloadData()
     }
+    
+    
 
 
 }

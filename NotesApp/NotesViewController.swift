@@ -35,9 +35,10 @@ class NotesViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveNotesNotes()
-        noteTextField.text = noteTitle?.title
+   notes = retrieveNotes()
+        noteTitleLabel.text = noteTitle?.title
         noteTextField.text = noteContent?.content
+        
         print(noteContent?.content)
         //changes color of navbar
         navigationController?.navigationBar.barTintColor = UIColor.clear
@@ -72,11 +73,8 @@ class NotesViewController: UIViewController {
         }
         
     }
-    
-    func retrieveNotesNotes() -> Results<NoteData> {
+    func retrieveNotes() -> Results<NoteData> {
         return realm.objects(NoteData.self)
-        
     }
-
 
 }
