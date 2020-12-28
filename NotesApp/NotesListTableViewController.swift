@@ -31,6 +31,7 @@ class NotesListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        noteTableView.reloadData()
         loadTitles()
     }
  

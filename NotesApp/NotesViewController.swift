@@ -14,6 +14,8 @@ class NotesViewController: UIViewController, UITextViewDelegate {
     var realm = try! Realm()
     var notes: Results<NoteData>?
     var noteTitle: NoteData?
+    
+   
    
     
     
@@ -50,6 +52,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
         
         let newNote = NoteData()
+       
         //gets currrent inputs and save them
         newNote.title = noteTitleLabel.text ?? ""
         newNote.content = noteTextField.text ?? ""
@@ -58,7 +61,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
        
         //returns to root view controller
         self.navigationController?.popViewController(animated: true)
-        print("saved")
+        
        
     }
     
@@ -67,7 +70,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
        
         do {
         try realm.write{
-            realm.add(newNote)
+            realm.add(newNote, update: .all)
         }
         } catch {
             
@@ -75,5 +78,22 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         }
         
     }
+    
+    
+    @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        
+       deleteNote()
+        self.navigationController?.popViewController(animated: true)
+    }
+    // removes objects from realm
+    func deleteNote(){
+        
+            try! realm.write{
+                realm.delete(noteTitle!)
+           
+        }
+        
+    }
+    
    
 }

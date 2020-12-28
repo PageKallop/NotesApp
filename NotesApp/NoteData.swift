@@ -14,5 +14,9 @@ class NoteData: Object {
    @objc dynamic var lastEdited : Date = Date()
    @objc dynamic var noteId: String = ""
     
+    override class func primaryKey() -> String? {
+        return "noteId"
+    }
+    
     
 }

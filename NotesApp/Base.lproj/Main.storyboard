@@ -87,11 +87,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6SA-4f-JQv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rmi-YM-9S6">
-                            <connections>
-                                <action selector="savePressed:" destination="UQm-6U-TgY" id="RuD-Os-Oy2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="rmi-YM-9S6">
+                                <connections>
+                                    <action selector="savePressed:" destination="UQm-6U-TgY" id="RuD-Os-Oy2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="vgD-eI-4Zx">
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="UQm-6U-TgY" id="q3L-UC-8y7"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="noteTextField" destination="IXK-cM-WAI" id="bIe-2f-zRY"/>
