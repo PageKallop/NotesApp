@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notes List Table View Controller-->
+        <!--Notes-->
         <scene sceneID="lzp-hl-Lrr">
             <objects>
                 <tableViewController id="T0m-w3-j8c" customClass="NotesListTableViewController" customModule="NotesApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,8 +34,9 @@
                             <outlet property="delegate" destination="T0m-w3-j8c" id="zNd-cE-fyS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="U4P-LV-0Hz">
+                    <navigationItem key="navigationItem" title="Notes" id="U4P-LV-0Hz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qlZ-0G-S99">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="UQm-6U-TgY" kind="show" identifier="ToNewNote" id="ChS-Gz-cmx"/>
                             </connections>
@@ -88,12 +89,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="6SA-4f-JQv">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="rmi-YM-9S6">
+                            <barButtonItem systemItem="done" id="rmi-YM-9S6">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="savePressed:" destination="UQm-6U-TgY" id="RuD-Os-Oy2"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="trash" id="vgD-eI-4Zx">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="deleteButtonPressed:" destination="UQm-6U-TgY" id="q3L-UC-8y7"/>
                                 </connections>
@@ -118,6 +121,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0fr-ga-roj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

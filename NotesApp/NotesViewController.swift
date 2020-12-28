@@ -65,7 +65,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
        
     }
     
-    //saves new notes to realm
+    //saves new notes and updates notes to realm
     func saveNotes(newNote: NoteData) {
        
         do {

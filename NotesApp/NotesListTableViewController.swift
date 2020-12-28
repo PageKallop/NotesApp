@@ -23,6 +23,13 @@ class NotesListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //changed tableview color
+        noteTableView.backgroundColor = UIColor.gray
+        //removed lines from empty cells
+        noteTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        //changed line separator color to white 
+        noteTableView.separatorColor = UIColor.white
+        
         noteTableView.dataSource = self 
         noteTableView.delegate = self
       
@@ -44,6 +51,7 @@ class NotesListTableViewController: UITableViewController {
         
         if let listTitle = noteTitles?[indexPath.row] {
             cell.textLabel?.text = listTitle.title
+            cell.backgroundColor = UIColor.clear
         }
         
         return cell
