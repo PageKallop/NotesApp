@@ -60,14 +60,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IXK-cM-WAI">
-                                <rect key="frame" x="20" y="138" width="374" height="724"/>
+                                <rect key="frame" x="20" y="195.5" width="374" height="666.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-dp-Ozc">
-                                <rect key="frame" x="20" y="104" width="374" height="34"/>
+                                <rect key="frame" x="20" y="156" width="374" height="39.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -77,14 +77,13 @@
                         <viewLayoutGuide key="safeArea" id="FLg-f8-8j2"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="jhd-dp-Ozc" secondAttribute="bottom" constant="724" id="DCb-8R-sXQ"/>
-                            <constraint firstItem="IXK-cM-WAI" firstAttribute="top" secondItem="jhd-dp-Ozc" secondAttribute="bottom" id="JD6-ue-jGg"/>
-                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="top" secondItem="FLg-f8-8j2" secondAttribute="top" constant="16" id="XSz-sz-Afd"/>
-                            <constraint firstItem="FLg-f8-8j2" firstAttribute="trailing" secondItem="IXK-cM-WAI" secondAttribute="trailing" constant="20" id="avo-MS-bNg"/>
-                            <constraint firstItem="FLg-f8-8j2" firstAttribute="trailing" secondItem="jhd-dp-Ozc" secondAttribute="trailing" constant="20" id="noZ-pv-E6K"/>
-                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="leading" secondItem="FLg-f8-8j2" secondAttribute="leading" constant="20" id="ukI-2O-RpK"/>
-                            <constraint firstItem="IXK-cM-WAI" firstAttribute="leading" secondItem="FLg-f8-8j2" secondAttribute="leading" constant="20" id="wUb-Hs-d8v"/>
-                            <constraint firstItem="IXK-cM-WAI" firstAttribute="bottom" secondItem="FLg-f8-8j2" secondAttribute="bottom" id="ztp-zr-dBA"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="top" secondItem="FLg-f8-8j2" secondAttribute="top" constant="16" id="35R-Av-7uf"/>
+                            <constraint firstItem="IXK-cM-WAI" firstAttribute="top" secondItem="jhd-dp-Ozc" secondAttribute="bottom" id="Bqh-VO-tdr"/>
+                            <constraint firstItem="IXK-cM-WAI" firstAttribute="bottom" secondItem="FLg-f8-8j2" secondAttribute="bottom" id="E3c-AU-T3z"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="trailing" secondItem="mou-iP-cfm" secondAttribute="trailingMargin" id="aq0-d8-2pM"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="trailing" secondItem="IXK-cM-WAI" secondAttribute="trailing" id="bEQ-tA-KfX"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="leading" secondItem="IXK-cM-WAI" secondAttribute="leading" id="jnS-sD-qtV"/>
+                            <constraint firstItem="jhd-dp-Ozc" firstAttribute="leading" secondItem="mou-iP-cfm" secondAttribute="leadingMargin" id="taw-Zs-V3j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6SA-4f-JQv">
@@ -118,8 +117,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="suz-RJ-gjG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0fr-ga-roj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="0fr-ga-roj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -53,7 +53,7 @@ class NotesListTableViewController: UITableViewController {
             cell.textLabel?.text = listTitle.title
             //changes cell color to clear
             cell.backgroundColor = UIColor.clear
-            //changes font size 
+            //changes font size
             cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         }
         
@@ -70,7 +70,7 @@ class NotesListTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        //loads NotesViewController and send data from selected row
         let destinationVC = segue.destination as! NotesViewController
         
         if segue.identifier == "ToNotes" {
@@ -83,6 +83,7 @@ class NotesListTableViewController: UITableViewController {
     //load realm data
     func loadTitles() {
         noteTitles = realm.objects(NoteData.self)
+        //sorts note so the most recent added is at the top
         noteTitles = noteTitles?.sorted(byKeyPath: "lastEdited", ascending: false)
         noteTableView.reloadData()
     }
