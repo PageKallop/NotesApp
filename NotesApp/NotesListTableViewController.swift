@@ -51,7 +51,10 @@ class NotesListTableViewController: UITableViewController {
         
         if let listTitle = noteTitles?[indexPath.row] {
             cell.textLabel?.text = listTitle.title
+            //changes cell color to clear
             cell.backgroundColor = UIColor.clear
+            //changes font size 
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 20)
         }
         
         return cell
